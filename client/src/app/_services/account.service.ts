@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { User } from '../_models/user';
 import { map } from 'rxjs';
 
@@ -17,6 +17,7 @@ export class AccountService {
         if (user) {
           localStorage.setItem('user', JSON.stringify(user));
           this.currentUser.set(user);
+          
         }
       })
     );
